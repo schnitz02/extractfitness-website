@@ -20,7 +20,7 @@ mobileNav?.querySelectorAll('a').forEach(link => {
 });
 
 // --- Scroll-triggered section reveals ---
-const revealSections = document.querySelectorAll('.about, .coaches, .noah, .services, .cta-section, .location');
+const revealSections = document.querySelectorAll('.reveal');
 
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -29,7 +29,7 @@ const revealObserver = new IntersectionObserver((entries) => {
             revealObserver.unobserve(entry.target);
         }
     });
-}, { threshold: 0.1 });
+}, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
 
 revealSections.forEach(section => revealObserver.observe(section));
 

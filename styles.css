@@ -38,8 +38,14 @@
 }
 
 html {
-    scroll-behavior: smooth;
     scroll-padding-top: 80px;
+}
+
+/* Smooth scroll only for anchor clicks, not JS-driven */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
 }
 
 body {
@@ -1407,14 +1413,4 @@ select.cta-form__input {
     100% { left: 100%; }
 }
 
-/* Scroll-triggered fade-in for sections */
-.about, .coaches, .noah, .services, .cta-section, .location {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
-}
-
-.about.visible, .coaches.visible, .noah.visible, .services.visible, .cta-section.visible, .location.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+/* Scroll-triggered fade-in for sections (disabled for skeleton review) */
