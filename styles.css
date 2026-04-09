@@ -1300,7 +1300,7 @@ select.cta-form__input {
 }
 
 .location__map iframe {
-    filter: invert(0.9) hue-rotate(180deg) saturate(0.3) brightness(0.8);
+    filter: none;
 }
 
 @media (max-width: 768px) {
