@@ -539,11 +539,13 @@ em {
     background: var(--surface-2);
     border: 1px solid var(--surface-3);
     border-radius: 2px;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s var(--ease);
 }
 
 .about__feature:hover {
     border-color: var(--blue);
+    transform: translateX(6px);
+    background: rgba(77, 141, 245, 0.04);
 }
 
 .about__feature-icon {
@@ -652,9 +654,9 @@ em {
 }
 
 .coach-card:hover {
-    border-color: var(--surface-3);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    border-color: var(--white-muted);
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
 }
 
 .coach-card--featured {
@@ -664,7 +666,8 @@ em {
 
 .coach-card--featured:hover {
     border-color: var(--blue);
-    box-shadow: 0 20px 50px rgba(77, 141, 245, 0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(77, 141, 245, 0.2), 0 0 0 1px rgba(77, 141, 245, 0.1);
 }
 
 .coach-card__image {
@@ -962,8 +965,9 @@ em {
 }
 
 .pricing-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+    transform: translateY(-6px);
+    border-color: var(--white-muted);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
 }
 
 .pricing-card--popular {
@@ -972,7 +976,9 @@ em {
 }
 
 .pricing-card--popular:hover {
-    box-shadow: 0 20px 50px rgba(77, 141, 245, 0.15);
+    border-color: var(--blue);
+    transform: translateY(-6px);
+    box-shadow: 0 24px 48px rgba(77, 141, 245, 0.2), 0 0 0 1px rgba(77, 141, 245, 0.1);
 }
 
 .pricing-card__badge {
