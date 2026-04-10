@@ -373,7 +373,7 @@ em {
     text-transform: uppercase;
     color: var(--white-dim);
     margin-bottom: 2rem;
-    animation: fadeSlideUp 0.8s var(--ease) both;
+    animation: fadeSlideUp 0.6s var(--ease) 0.1s both;
 }
 
 .hero__title {
@@ -390,21 +390,21 @@ em {
     font-size: clamp(4rem, 12vw, 9rem);
     letter-spacing: 0.04em;
     color: var(--white);
-    animation: fadeSlideUp 0.8s var(--ease) 0.1s both;
+    animation: heroTitleIn 0.7s var(--ease) 0.2s both;
 }
 
 .hero__title-line--2 {
     font-size: clamp(3.5rem, 10vw, 7.5rem);
     letter-spacing: 0.02em;
     color: var(--white);
-    animation: fadeSlideUp 0.8s var(--ease) 0.2s both;
+    animation: heroTitleIn 0.7s var(--ease) 0.35s both;
 }
 
 .hero__title-line--3 {
     font-size: clamp(3rem, 8vw, 6rem);
     letter-spacing: 0.02em;
     color: var(--white-dim);
-    animation: fadeSlideUp 0.8s var(--ease) 0.3s both;
+    animation: heroTitleIn 0.7s var(--ease) 0.5s both;
 }
 
 .hero__title-line--3 em {
@@ -418,7 +418,7 @@ em {
     color: var(--white-muted);
     line-height: 1.7;
     margin-bottom: 2.5rem;
-    animation: fadeSlideUp 0.8s var(--ease) 0.4s both;
+    animation: fadeSlideUp 0.6s var(--ease) 0.7s both;
 }
 
 .hero__actions {
@@ -426,14 +426,14 @@ em {
     gap: 16px;
     flex-wrap: wrap;
     margin-bottom: 4rem;
-    animation: fadeSlideUp 0.8s var(--ease) 0.5s both;
+    animation: fadeSlideUp 0.6s var(--ease) 0.85s both;
 }
 
 .hero__stats {
     display: flex;
     align-items: center;
     gap: 32px;
-    animation: fadeSlideUp 0.8s var(--ease) 0.6s both;
+    animation: fadeSlideUp 0.6s var(--ease) 1s both;
 }
 
 .hero__stat-num {
@@ -1419,6 +1419,17 @@ select.cta-form__input {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes heroTitleIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
