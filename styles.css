@@ -199,6 +199,15 @@ em {
     transition: all 0.3s ease;
 }
 
+.nav--scrolled {
+    background: rgba(8, 8, 10, 0.95);
+    border-bottom-color: rgba(255, 255, 255, 0.06);
+}
+
+.nav--scrolled .nav__inner {
+    height: 56px;
+}
+
 .nav__inner {
     max-width: var(--container);
     margin: 0 auto;
@@ -206,6 +215,7 @@ em {
     align-items: center;
     justify-content: space-between;
     height: 72px;
+    transition: height 0.3s var(--ease);
 }
 
 .nav__logo {

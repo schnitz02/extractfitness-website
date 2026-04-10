@@ -45,18 +45,15 @@ window.addEventListener('load', () => {
     revealEls.forEach(el => revealObserver.observe(el));
 });
 
-// --- Nav background on scroll ---
+// --- Nav shrink on scroll ---
 const nav = document.getElementById('nav');
-let lastScroll = 0;
 
 window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
-    if (scrollY > 50) {
-        nav.style.borderBottomColor = 'rgba(255,255,255,0.06)';
+    if (window.scrollY > 60) {
+        nav.classList.add('nav--scrolled');
     } else {
-        nav.style.borderBottomColor = 'rgba(255,255,255,0.04)';
+        nav.classList.remove('nav--scrolled');
     }
-    lastScroll = scrollY;
 }, { passive: true });
 
 // --- Form submission placeholder ---
