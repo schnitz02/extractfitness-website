@@ -20,18 +20,30 @@ mobileNav?.querySelectorAll('a').forEach(link => {
 });
 
 // --- Scroll-triggered section reveals ---
-const revealSections = document.querySelectorAll('.reveal');
+// Wait for page to be fully loaded before observing
+window.addEventListener('load', () => {
+    const revealEls = document.querySelectorAll('.reveal');
 
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target);
-        }
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Stagger children if the section has them
+                const staggerChildren = entry.target.querySelectorAll('.reveal-child');
+                staggerChildren.forEach((child, i) => {
+                    child.style.transitionDelay = `${i * 0.1}s`;
+                    child.classList.add('visible');
+                });
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -60px 0px'
     });
-}, { threshold: 0, rootMargin: '0px 0px 0px 0px' });
 
-revealSections.forEach(section => revealObserver.observe(section));
+    revealEls.forEach(el => revealObserver.observe(el));
+});
 
 // --- Nav background on scroll ---
 const nav = document.getElementById('nav');
