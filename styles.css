@@ -1433,4 +1433,259 @@ select.cta-form__input {
     100% { left: 100%; }
 }
 
+/* ============================================
+   GEOMETRIC PLACEHOLDERS
+   ============================================ */
+.about__image-placeholder,
+.coach-card__placeholder,
+.noah__image-placeholder {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Diagonal slash pattern */
+.about__image-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg, var(--surface-3) 25%, transparent 25%) -50px 0,
+        linear-gradient(225deg, var(--surface-3) 25%, transparent 25%) -50px 0,
+        linear-gradient(315deg, var(--surface-3) 25%, transparent 25%),
+        linear-gradient(45deg, var(--surface-3) 25%, transparent 25%);
+    background-size: 100px 100px;
+    opacity: 0.3;
+}
+
+.about__image-placeholder::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40%;
+    background: linear-gradient(to top, var(--surface-2), transparent);
+}
+
+/* Angular geometric overlay for coach cards */
+.coach-card__placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(145deg, transparent 40%, rgba(77, 141, 245, 0.06) 40%, rgba(77, 141, 245, 0.06) 42%, transparent 42%),
+        linear-gradient(145deg, transparent 55%, rgba(77, 141, 245, 0.04) 55%, rgba(77, 141, 245, 0.04) 57%, transparent 57%),
+        linear-gradient(145deg, transparent 70%, rgba(77, 141, 245, 0.03) 70%);
+}
+
+.coach-card--featured .coach-card__placeholder::before {
+    background:
+        linear-gradient(145deg, transparent 35%, rgba(77, 141, 245, 0.1) 35%, rgba(77, 141, 245, 0.1) 37%, transparent 37%),
+        linear-gradient(145deg, transparent 50%, rgba(77, 141, 245, 0.07) 50%, rgba(77, 141, 245, 0.07) 52%, transparent 52%),
+        linear-gradient(145deg, transparent 65%, rgba(77, 141, 245, 0.04) 65%);
+}
+
+.coach-card__placeholder span {
+    position: relative;
+    z-index: 1;
+    opacity: 0.15;
+    font-size: 4rem;
+}
+
+/* Noah spotlight — bold angular pattern */
+.noah__image-placeholder::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(160deg, var(--blue) 0%, transparent 30%),
+        linear-gradient(340deg, var(--surface-3) 0%, transparent 40%);
+    opacity: 0.15;
+}
+
+.noah__image-placeholder::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    width: 80%;
+    height: 70%;
+    border: 1px solid rgba(77, 141, 245, 0.15);
+    clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+}
+
+.noah__image-initials {
+    position: relative;
+    z-index: 1;
+    opacity: 0.08 !important;
+    font-size: 8rem !important;
+}
+
+.about__image-ef {
+    position: relative;
+    z-index: 1;
+    opacity: 0.08 !important;
+    font-size: 6rem !important;
+}
+
+.about__image-text,
+.noah__image-text {
+    position: relative;
+    z-index: 2;
+}
+
+.about__image-text span:last-child,
+.noah__image-text span:last-child {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--white-muted);
+    opacity: 0.5;
+}
+
+/* ============================================
+   MOBILE RESPONSIVENESS
+   ============================================ */
+@media (max-width: 480px) {
+    /* Hero mobile */
+    .hero {
+        padding: 100px 0 60px;
+        min-height: auto;
+    }
+
+    .hero__title-line--1 {
+        font-size: 3.5rem;
+    }
+    .hero__title-line--2 {
+        font-size: 3rem;
+    }
+    .hero__title-line--3 {
+        font-size: 2.5rem;
+    }
+
+    .hero__sub {
+        font-size: 0.95rem;
+    }
+
+    .hero__actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .hero__actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero__stats {
+        gap: 20px;
+    }
+
+    .hero__stat-num {
+        font-size: 1.6rem;
+    }
+
+    .hero__stat-divider {
+        height: 30px;
+    }
+
+    .hero__scroll-hint {
+        display: none;
+    }
+
+    /* About mobile */
+    .about__title {
+        font-size: 2.2rem;
+    }
+
+    .about__image-placeholder {
+        aspect-ratio: 16/9;
+    }
+
+    /* Coaches mobile */
+    .coaches__title {
+        font-size: 2.2rem;
+    }
+
+    .coaches__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .coach-card__image {
+        aspect-ratio: 16/9;
+    }
+
+    /* Noah mobile */
+    .noah__title {
+        font-size: 2.5rem;
+    }
+
+    .noah__image-main {
+        max-width: 100%;
+    }
+
+    .noah__image-placeholder {
+        aspect-ratio: 4/3;
+    }
+
+    .noah__career-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .noah__tagline {
+        font-size: 1rem;
+    }
+
+    .noah__cta-group {
+        flex-direction: column;
+    }
+
+    .noah__cta-group .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Services mobile */
+    .services__title {
+        font-size: 2.2rem;
+    }
+
+    .services__trial-inner {
+        padding: 28px 20px;
+    }
+
+    .pricing-card {
+        padding: 24px;
+    }
+
+    /* CTA mobile */
+    .cta-section__title {
+        font-size: 2.2rem;
+    }
+
+    .cta-form__row {
+        grid-template-columns: 1fr;
+    }
+
+    /* Location mobile */
+    .location__title {
+        font-size: 1.8rem;
+    }
+
+    .location__map {
+        aspect-ratio: 1;
+    }
+
+    /* Footer mobile */
+    .footer__social {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer__social-link {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
 /* Scroll-triggered fade-in for sections (disabled for skeleton review) */
